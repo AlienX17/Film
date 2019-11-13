@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Film</string>
+    <string name="title">Title</string>
+    <string name="year">Year</string>
+    <string name="rating">Rating</string>
+    <string name="runtime">Runtime</string>
+</resources>

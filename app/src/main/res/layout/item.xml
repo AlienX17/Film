@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:background="#8A8A8A"
+        android:textColor="#FFF"/>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/year"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:background="#32A3FD"
+            android:text="@string/year"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/rating"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/year"
+            android:background="#0388F1"
+            android:text="@string/rating"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/runtime"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/rating"
+            android:background="#036DC0"
+            android:text="@string/runtime"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
