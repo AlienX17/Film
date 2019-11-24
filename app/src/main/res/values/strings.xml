@@ -2,6 +2,10 @@
     <string name="app_name">Film</string>
     <string name="title">Title</string>
     <string name="year">Year</string>
-    <string name="rating">Rating</string>
+    <string name="rating">★</string>
     <string name="runtime">Runtime</string>
+    <string name="noConnection">No internet connection</string>
+    <string name="noFilms">No films found</string>
+    <string name="language">Language</string>
+    <string name="refresh">Refresh</string>
 </resources>

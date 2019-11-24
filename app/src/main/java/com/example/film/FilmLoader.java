@@ -7,25 +7,25 @@ import java.util.List;
 
 public class FilmLoader extends AsyncTaskLoader<List<Film>> {
 
-    private String filmurl;
+    private String filmUrl;
 
     @Override
     protected void onStartLoading() {
         forceLoad();
     }
 
-    FilmLoader(Context context, String filmurl) {
+    FilmLoader(Context context, String filmUrl) {
         super(context);
-        this.filmurl = filmurl;
+        this.filmUrl = filmUrl;
     }
 
     @Override
     public List<Film> loadInBackground() {
-        if(filmurl == null) {
+        if(filmUrl == null) {
             return null;
         }
 
-        return QueryUtils.fetchFilmData(filmurl);
+        return QueryUtils.fetchFilmData(filmUrl);
     }
 
 }

@@ -3,17 +3,19 @@ package com.example.film;
 class Film {
 
     private String mTitle;
-    private int mYear;
-    private double mRating;
-    private int mRunTime;
     private String mUrl;
+    private String mLanguage;
+    private int mYear;
+    private int mRunTime;
+    private double mRating;
 
-    Film(String title, int year, double rating, int runtime, String url) {
+    Film(String title, int year, double rating, int runTime, String url, String language) {
         this.mTitle = title;
         this.mYear = year;
         this.mRating = rating;
-        this.mRunTime = runtime;
+        this.mRunTime = runTime;
         this.mUrl = url;
+        this.mLanguage = language;
     }
 
     String getTitle() {
@@ -34,6 +36,10 @@ class Film {
 
     String getUrl() {
         return mUrl;
+    }
+
+    String getLanguage() {
+        return mLanguage;
     }
 
 }

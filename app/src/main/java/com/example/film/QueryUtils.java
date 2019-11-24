@@ -50,18 +50,21 @@ class QueryUtils {
         try {
 
             JSONObject object = new JSONObject(jsonResponse);
-            JSONArray features = object.getJSONArray("data");
+            JSONObject data = object.getJSONObject("data");
+            JSONArray movies = data.getJSONArray("movies");
 
-            for(int i = 0; i < features.length(); i++) {
-                JSONObject properties = features.getJSONObject(i).getJSONObject("movies");
+            for(int i = 0; i < movies.length(); i++) {
 
-                String title = properties.getString("title");
-                int year = properties.getInt("year");
-                double rating = properties.getDouble("rating");
-                int runtime = properties.getInt("runtime");
-                String filmUrl = properties.getString("url");
+                JSONObject details = movies.getJSONObject(i);
 
-                Film film = new Film(title, year, rating, runtime, filmUrl);
+                String title = details.getString("title");
+                int year = details.getInt("year");
+                double rating = details.getDouble("rating");
+                int runtime = details.getInt("runtime");
+                String filmUrl = details.getString("url");
+                String language = details.getString("language");
+
+                Film film = new Film(title, year, rating, runtime, filmUrl, language);
 
                 films.add(film);
             }

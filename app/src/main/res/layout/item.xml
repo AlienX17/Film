@@ -2,60 +2,109 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="5dp">
-
-    <TextView
-        android:id="@+id/titleview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/title"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:background="#8A8A8A"
-        android:textColor="#FFF"/>
-
+    android:layout_height="wrap_content">
 
     <RelativeLayout
+        android:id="@+id/film"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        tools:ignore="UselessParent">
 
-        <TextView
-            android:id="@+id/yearview"
-            android:layout_width="135dp"
-            android:layout_height="wrap_content"
-            android:background="#32A3FD"
-            android:text="@string/year"
-            android:textAlignment="center"
-            android:textSize="25sp"
-            android:textStyle="bold"/>
+        <RelativeLayout
+            android:id="@+id/avatar"
+            android:layout_width="150dp"
+            android:layout_height="250dp">
+
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="150dp"
+        android:layout_height="250dp"
+        android:background="#8A8A8A"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background"
+        tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/ratingview"
-            android:layout_width="135dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/yearview"
-            android:background="#0388F1"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/rating_circle"
             android:text="@string/rating"
-            android:textAlignment="center"
-            android:textSize="25sp"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:textSize="12sp"
             android:textStyle="bold"
-            android:layout_toEndOf="@+id/yearview" />
+            android:layout_marginEnd="5dp"
+            android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/details"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_toRightOf="@+id/avatar"
+        android:layout_toEndOf="@+id/avatar">
+
+        <TextView
+            android:id="@+id/titleview"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="@string/title"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:background="@drawable/titlebanner"
+            android:layout_margin="5dp"
+            android:textColor="#FFF"/>
 
         <TextView
             android:id="@+id/runtimeview"
-            android:layout_width="135dp"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/ratingview"
-            android:background="#036DC0"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@+id/titleview"
+            android:textColor="#000"
             android:text="@string/runtime"
-            android:textAlignment="center"
+            android:layout_margin="5dp"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/languageview"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@+id/runtimeview"
+            android:text="@string/language"
+            android:textColor="#000"
+            android:layout_margin="5dp"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/yearview"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/year"
+            android:paddingTop="45dp"
+            android:paddingLeft="14dp"
             android:textSize="25sp"
             android:textStyle="bold"
-            android:layout_toEndOf="@+id/ratingview" />
+            android:textColor="#FFF"
+            android:background="@drawable/year"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
 
     </RelativeLayout>
 
