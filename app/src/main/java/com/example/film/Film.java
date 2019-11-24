@@ -30,8 +30,18 @@ class Film {
         return mRating;
     }
 
-    int getRunTime() {
-        return mRunTime;
+    String getRunTime() {
+
+        long timeSec = mRunTime;
+        int time = (int) timeSec/ 3600;
+        int temp = (int) timeSec- time * 3600;
+        int hours = temp / 60;
+        temp = temp - hours * 60;
+        int mins = temp;
+
+        String requiredFormat = hours + "hr " + mins + "min";//hh:mm:ss formatted string
+
+        return requiredFormat;
     }
 
     String getUrl() {

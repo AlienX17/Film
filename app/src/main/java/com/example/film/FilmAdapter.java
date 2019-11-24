@@ -45,7 +45,7 @@ class FilmAdapter extends ArrayAdapter<Film> {
 
 
         TextView language = view.findViewById(R.id.languageview);
-        language.setText("Language: " + current.getLanguage());
+        language.setText(current.getLanguage());
 
 
         TextView year = view.findViewById(R.id.yearview);
@@ -61,7 +61,7 @@ class FilmAdapter extends ArrayAdapter<Film> {
 
 
         TextView runtime = view.findViewById(R.id.runtimeview);
-        runtime.setText("Time: " + current.getRunTime() + " min");
+        runtime.setText(current.getRunTime());
 
         return view;
     }

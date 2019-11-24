@@ -60,11 +60,11 @@ class QueryUtils {
                 String title = details.getString("title");
                 int year = details.getInt("year");
                 double rating = details.getDouble("rating");
-                int runtime = details.getInt("runtime");
+                int runTime = details.getInt("runtime");
                 String filmUrl = details.getString("url");
                 String language = details.getString("language");
 
-                Film film = new Film(title, year, rating, runtime, filmUrl, language);
+                Film film = new Film(title, year, rating, runTime, filmUrl, language);
 
                 films.add(film);
             }
