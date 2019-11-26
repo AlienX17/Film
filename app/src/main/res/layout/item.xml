@@ -65,7 +65,8 @@
             android:gravity="center"
             android:background="@drawable/titlebanner"
             android:layout_marginLeft="5dp"
-            android:textColor="#FFF"/>
+            android:textColor="#FFF"
+            android:layout_marginStart="5dp" />
 
         <ImageView
             android:id="@+id/timeview"
@@ -74,7 +75,9 @@
             android:src="@drawable/clock"
             android:layout_below="@+id/titleview"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="7dp"/>
+            android:layout_marginTop="7dp"
+            tools:ignore="ContentDescription"
+            android:layout_marginStart="5dp" />
 
         <TextView
             android:id="@+id/runtimeview"
@@ -87,7 +90,9 @@
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
             android:textSize="16sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:layout_toEndOf="@+id/timeview"
+            android:layout_marginStart="5dp" />
 
         <ImageView
             android:id="@+id/microphoneview"
@@ -96,7 +101,9 @@
             android:src="@drawable/microphone"
             android:layout_below="@+id/timeview"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="7dp"/>
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="5dp"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/languageview"
@@ -109,7 +116,35 @@
             android:layout_marginLeft="5dp"
             android:layout_marginTop="8dp"
             android:textSize="16sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/microphoneview" />
+
+        <ImageView
+            android:id="@+id/dramaview"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/drama"
+            android:layout_below="@+id/microphoneview"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="7dp"
+            tools:ignore="ContentDescription"
+            android:layout_marginStart="5dp" />
+
+        <TextView
+            android:id="@+id/genresview"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@+id/languageview"
+            android:layout_toRightOf="@+id/dramaview"
+            android:text="@string/genres"
+            android:textColor="#000"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="8dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_toEndOf="@+id/dramaview"
+            android:layout_marginStart="5dp" />
 
         <TextView
             android:id="@+id/yearview"

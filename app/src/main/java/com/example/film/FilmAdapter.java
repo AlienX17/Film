@@ -12,7 +12,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
-
 import java.text.DecimalFormat;
 import java.util.List;
 
@@ -46,6 +45,9 @@ class FilmAdapter extends ArrayAdapter<Film> {
 
         TextView language = view.findViewById(R.id.languageview);
         language.setText(current.getLanguage());
+
+        TextView genres = view.findViewById(R.id.genresview);
+        genres.setText(current.getGenres());
 
 
         TextView year = view.findViewById(R.id.yearview);

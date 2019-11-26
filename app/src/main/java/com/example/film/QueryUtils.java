@@ -57,16 +57,18 @@ class QueryUtils {
 
                 JSONObject details = movies.getJSONObject(i);
 
-                String title = details.getString("title");
-                int year = details.getInt("year");
-                double rating = details.getDouble("rating");
-                int runTime = details.getInt("runtime");
-                String filmUrl = details.getString("url");
-                String language = details.getString("language");
+                    String title = details.getString("title");
+                    int year = details.getInt("year");
+                    double rating = details.getDouble("rating");
+                    int runTime = details.getInt("runtime");
+                    String filmUrl = details.getString("url");
+                    String language = details.getString("language");
+                    String genres = details.getString("genres");
 
-                Film film = new Film(title, year, rating, runTime, filmUrl, language);
+                    Film film = new Film(title, year, rating, runTime, filmUrl, language, genres);
 
-                films.add(film);
+                    films.add(film);
+
             }
 
         } catch (JSONException e) {

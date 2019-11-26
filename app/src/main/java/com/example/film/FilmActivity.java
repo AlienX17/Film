@@ -3,10 +3,14 @@ package com.example.film;
 import android.app.LoaderManager;
 import android.content.Intent;
 import android.content.Loader;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -37,7 +41,6 @@ public class FilmActivity extends AppCompatActivity implements LoaderManager.Loa
         mEmptyState = findViewById(R.id.empty_view);
         mProgressBar = findViewById(R.id.progressBar);
 
-        // Checking the internet connection before initializing the loader
         ConnectivityManager manager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
         assert manager != null;
         NetworkInfo networkInfo = manager.getActiveNetworkInfo();
@@ -71,7 +74,30 @@ public class FilmActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public Loader<List<Film>> onCreateLoader(int i, Bundle bundle) {
-        return new FilmLoader(this, REQUEST_URL);
+
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        String minRating = sharedPrefs.getString(
+                getString(R.string.settings_min_rating_key),
+                getString(R.string.settings_min_rating_default));
+
+        String itemNumber = sharedPrefs.getString(
+                getString(R.string.settings_item_number_key),
+                getString(R.string.settings_item_number_default));
+
+        String sort_by = sharedPrefs.getString(
+                getString(R.string.settings_sort_by_key),
+                getString(R.string.settings_sort_by_default)
+        );
+
+        Uri baseUri = Uri.parse(REQUEST_URL);
+        Uri.Builder uriBuilder = baseUri.buildUpon();
+
+        uriBuilder.appendQueryParameter("format", "geojson");
+        uriBuilder.appendQueryParameter("limit", itemNumber);
+        uriBuilder.appendQueryParameter("minimum_rating", minRating);
+        uriBuilder.appendQueryParameter("sort_by", sort_by);
+
+        return new FilmLoader(this, uriBuilder.toString());
     }
 
     @Override
@@ -81,7 +107,6 @@ public class FilmActivity extends AppCompatActivity implements LoaderManager.Loa
             return;
         }
         mAdapter.addAll(films);
-
         mProgressBar.setVisibility(View.GONE);
         mEmptyState.setText(R.string.noFilms);
 
@@ -90,6 +115,23 @@ public class FilmActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public void onLoaderReset(Loader<List<Film>> loader) {
         mAdapter.clear();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            Intent settingsIntent = new Intent(this, SettingsActivity.class);
+            startActivity(settingsIntent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }

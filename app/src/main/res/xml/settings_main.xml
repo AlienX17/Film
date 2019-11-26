@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="Settings">
+
+    <ListPreference
+        android:defaultValue="@string/settings_sort_by_default"
+        android:entries="@array/settings_sort_by_labels"
+        android:entryValues="@array/settings_sort_by_values"
+        android:key="@string/settings_sort_by_key"
+        android:title="@string/settings_sort_by_label" />
+
+    <EditTextPreference
+        android:defaultValue="@string/settings_min_rating_default"
+        android:inputType="numberDecimal"
+        android:key="@string/settings_min_rating_key"
+        android:selectAllOnFocus="true"
+        android:title="@string/settings_min_rating_label" />
+
+    <EditTextPreference
+        android:defaultValue="@string/settings_item_number_default"
+        android:inputType="numberDecimal"
+        android:key="@string/settings_item_number_key"
+        android:selectAllOnFocus="true"
+        android:title="Item Number (1-50)" />
+
+</PreferenceScreen>

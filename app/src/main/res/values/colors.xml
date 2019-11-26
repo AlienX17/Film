@@ -3,37 +3,17 @@
     <color name="colorPrimary">#000</color>
     <color name="colorPrimaryDark">#000</color>
 
-    <!-- Accent color of the app -->
     <color name="colorAccent">#10CAC9</color>
 
-    <!-- Color for an earthquake with magnitude 0 and 2 -->
     <color name="rating1">#C03823</color>
-
-    <!-- rating circle color for an earthquake with rating between 2 and 3 -->
     <color name="rating2">#D93218</color>
-
-    <!-- rating circle color for an earthquake with rating between 3 and 4 -->
     <color name="rating3">#E13A20</color>
-
-    <!-- rating circle color for an earthquake with rating between 4 and 5 -->
     <color name="rating4">#E75F40</color>
-
-    <!-- rating circle color for an earthquake with rating between 5 and 6 -->
     <color name="rating5">#FF7D50</color>
-
-    <!-- rating circle color for an earthquake with rating between 6 and 7 -->
     <color name="rating6">#F5A623</color>
-
-    <!-- rating circle color for an earthquake with rating between 7 and 8 -->
     <color name="rating7">#24F3F2</color>
-
-    <!-- rating circle color for an earthquake with rating between 8 and 9 -->
     <color name="rating8">#10CAC9</color>
-
-    <!-- rating circle color for an earthquake with rating between 9 and 10 -->
     <color name="rating9">#04B4B3</color>
-
-    <!-- rating circle color for an earthquake with rating over 10 -->
     <color name="rating10plus">#4A7BA7</color>
 
 </resources>

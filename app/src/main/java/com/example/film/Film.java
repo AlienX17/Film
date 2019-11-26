@@ -5,17 +5,19 @@ class Film {
     private String mTitle;
     private String mUrl;
     private String mLanguage;
+    private String mGenres;
     private int mYear;
     private int mRunTime;
     private double mRating;
 
-    Film(String title, int year, double rating, int runTime, String url, String language) {
+    Film(String title, int year, double rating, int runTime, String url, String language, String genres) {
         this.mTitle = title;
         this.mYear = year;
         this.mRating = rating;
         this.mRunTime = runTime;
         this.mUrl = url;
         this.mLanguage = language;
+        this.mGenres = genres;
     }
 
     String getTitle() {
@@ -39,14 +41,14 @@ class Film {
         temp = temp - hours * 60;
         int mins = temp;
 
-        String requiredFormat = hours + "hr " + mins + "min";//hh:mm:ss formatted string
-
-        return requiredFormat;
+        return hours + "hr " + mins + "min";
     }
 
     String getUrl() {
         return mUrl;
     }
+
+    String getGenres() {return mGenres;}
 
     String getLanguage() {
         return mLanguage;

@@ -8,4 +8,31 @@
     <string name="noFilms">No films found</string>
     <string name="language">Language</string>
     <string name="refresh">Refresh</string>
+    <string name="genres">Genres</string>
+
+    <string name="settings_title">Film Settings</string>
+
+    <string name="settings_menu_item">Settings</string>
+
+    <string name="settings_item_number_label">Item Number(1–50)</string>
+    <string name="settings_item_number_key" translatable="false">item_number</string>
+    <string name="settings_item_number_default" translatable="false">50</string>
+
+    <string name="settings_min_rating_label">Minimum Rating</string>
+    <string name="settings_min_rating_key" translatable="false">min_rating</string>
+    <string name="settings_min_rating_default" translatable="false">0</string>
+
+    <string name="settings_sort_by_label">Sort By</string>
+    <string name="settings_sort_by_key" translatable="false">sort_by</string>
+    <string name="settings_sort_by_default" translatable="false">@string/settings_sort_by_date_value</string>
+
+    <string name="settings_sort_by_rating_label">Rating</string>
+    <string name="settings_sort_by_rating_value" translatable="false">rating</string>
+
+    <string name="settings_sort_by_year_label">Year</string>
+    <string name="settings_sort_by_year_value" translatable="false">year</string>
+
+    <string name="settings_sort_by_date_label">Date Added</string>
+    <string name="settings_sort_by_date_value" translatable="false">date_added</string>
+
 </resources>
