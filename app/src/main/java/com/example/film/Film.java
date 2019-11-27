@@ -24,6 +24,18 @@ class Film {
         return mTitle;
     }
 
+    String getUrl() {
+        return mUrl;
+    }
+
+    String getLanguage() {
+        return mLanguage;
+    }
+
+    String getGenres() {
+        return mGenres;
+    }
+
     int getYear() {
         return mYear;
     }
@@ -35,23 +47,12 @@ class Film {
     String getRunTime() {
 
         long timeSec = mRunTime;
-        int time = (int) timeSec/ 3600;
-        int temp = (int) timeSec- time * 3600;
+        int time = (int) timeSec / 3600;
+        int temp = (int) timeSec - time * 3600;
         int hours = temp / 60;
         temp = temp - hours * 60;
         int mins = temp;
 
         return hours + "hr " + mins + "min";
     }
-
-    String getUrl() {
-        return mUrl;
-    }
-
-    String getGenres() {return mGenres;}
-
-    String getLanguage() {
-        return mLanguage;
-    }
-
 }

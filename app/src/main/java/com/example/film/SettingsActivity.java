@@ -52,19 +52,15 @@ public class SettingsActivity extends AppCompatActivity {
                     CharSequence[] labels = listPreference.getEntries();
                     preference.setSummary(labels[prefIndex]);
                 }
-            }
-            else if(preference instanceof EditTextPreference)
-            {
-                if(preference.getKey() == getString(R.string.settings_item_number_key))
-                {
+            } else if (preference instanceof EditTextPreference) {
+                if (preference.getKey() == getString(R.string.settings_item_number_key)) {
                     if (Integer.parseInt(stringValue) > 0 && Integer.parseInt(stringValue) <= 50)
                         preference.setSummary(stringValue);
-                    else if (Integer.parseInt((stringValue))<=0)
+                    else if (Integer.parseInt((stringValue)) <= 0)
                         preference.setSummary("1");
                     else
                         preference.setSummary("50");
-                }
-                else
+                } else
                     preference.setSummary(stringValue);
             }
             return true;

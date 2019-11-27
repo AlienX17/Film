@@ -22,7 +22,7 @@ class QueryUtils {
     private QueryUtils() {
     }
 
-    static  List<Film> fetchFilmData(String requestUrl) {
+    static List<Film> fetchFilmData(String requestUrl) {
 
         URL url = createUrl(requestUrl);
         List<Film> films = null;
@@ -41,7 +41,7 @@ class QueryUtils {
 
     private static ArrayList<Film> extractFeaturesFromJson(String jsonResponse) {
 
-        if(jsonResponse == null) {
+        if (jsonResponse == null) {
             return null;
         }
 
@@ -53,21 +53,22 @@ class QueryUtils {
             JSONObject data = object.getJSONObject("data");
             JSONArray movies = data.getJSONArray("movies");
 
-            for(int i = 0; i < movies.length(); i++) {
+            for (int i = 0; i < movies.length(); i++) {
 
                 JSONObject details = movies.getJSONObject(i);
 
-                    String title = details.getString("title");
-                    int year = details.getInt("year");
-                    double rating = details.getDouble("rating");
-                    int runTime = details.getInt("runtime");
-                    String filmUrl = details.getString("url");
-                    String language = details.getString("language");
-                    String genres = details.getString("genres");
+                String title = details.getString("title");
+                int year = details.getInt("year");
+                double rating = details.getDouble("rating");
+                int runTime = details.getInt("runtime");
+                String filmUrl = details.getString("url");
+                String language = details.getString("language");
+                String genres = details.getString("genres");
+                //String imageUrl = details.getString("background_image");
 
-                    Film film = new Film(title, year, rating, runTime, filmUrl, language, genres);
+                Film film = new Film(title, year, rating, runTime, filmUrl, language, genres);
 
-                    films.add(film);
+                films.add(film);
 
             }
 
@@ -82,7 +83,7 @@ class QueryUtils {
 
         URL url = null;
 
-        if(stringUrl == null) {
+        if (stringUrl == null) {
             return null;
         }
         try {
@@ -99,7 +100,7 @@ class QueryUtils {
         InputStream inputStream = null;
 
 
-        if(url == null) {
+        if (url == null) {
             return jsonResponse;
         }
 
@@ -108,17 +109,17 @@ class QueryUtils {
             urlConnection.setRequestMethod("GET");
             urlConnection.connect();
 
-            if(urlConnection.getResponseCode() == 200) {
+            if (urlConnection.getResponseCode() == 200) {
                 inputStream = urlConnection.getInputStream();
                 jsonResponse = readFromStream(inputStream);
             }
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            if(urlConnection != null) {
+            if (urlConnection != null) {
                 urlConnection.disconnect();
             }
-            if(inputStream != null) {
+            if (inputStream != null) {
                 inputStream.close();
             }
         }
@@ -126,12 +127,12 @@ class QueryUtils {
         return jsonResponse;
     }
 
-    private static String readFromStream (InputStream inputStream) {
+    private static String readFromStream(InputStream inputStream) {
         InputStreamReader streamReader;
         BufferedReader reader;
         StringBuilder result = new StringBuilder();
 
-        if(inputStream == null) {
+        if (inputStream == null) {
             return null;
         }
 

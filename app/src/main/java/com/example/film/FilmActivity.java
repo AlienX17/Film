@@ -45,8 +45,8 @@ public class FilmActivity extends AppCompatActivity implements LoaderManager.Loa
         assert manager != null;
         NetworkInfo networkInfo = manager.getActiveNetworkInfo();
 
-        if(networkInfo != null && networkInfo.isConnected()) {
-            LoaderManager loaderManager  = getLoaderManager();
+        if (networkInfo != null && networkInfo.isConnected()) {
+            LoaderManager loaderManager = getLoaderManager();
             loaderManager.initLoader(FILM_LOADER_ID, null, this);
 
         } else {

@@ -21,7 +21,7 @@ public class FilmLoader extends AsyncTaskLoader<List<Film>> {
 
     @Override
     public List<Film> loadInBackground() {
-        if(filmUrl == null) {
+        if (filmUrl == null) {
             return null;
         }
 

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/film"
@@ -19,149 +18,149 @@
             android:layout_width="150dp"
             android:layout_height="250dp">
 
-    <ImageView
-        android:id="@+id/imageview"
-        android:layout_width="150dp"
-        android:layout_height="250dp"
-        android:background="#8A8A8A"
-        android:scaleType="centerCrop"
-        android:src="@drawable/background"
-        tools:ignore="ContentDescription" />
+            <ImageView
+                android:id="@+id/imageview"
+                android:layout_width="150dp"
+                android:layout_height="250dp"
+                android:background="#8A8A8A"
+                android:scaleType="centerCrop"
+                android:src="@drawable/background"
+                tools:ignore="ContentDescription" />
 
-        <TextView
-            android:id="@+id/ratingview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="5dp"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/rating_circle"
-            android:text="@string/rating"
-            android:textColor="#FFFFFF"
-            android:gravity="center"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:layout_marginEnd="5dp"
-            android:layout_alignParentEnd="true" />
+            <TextView
+                android:id="@+id/ratingview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/rating_circle"
+                android:gravity="center"
+                android:text="@string/rating"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
         </RelativeLayout>
 
 
-    <RelativeLayout
-        android:id="@+id/details"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_toRightOf="@+id/avatar"
-        android:layout_toEndOf="@+id/avatar">
-
-        <TextView
-            android:id="@+id/titleview"
+        <RelativeLayout
+            android:id="@+id/details"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:text="@string/title"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:background="@drawable/titlebanner"
-            android:layout_marginLeft="5dp"
-            android:textColor="#FFF"
-            android:layout_marginStart="5dp" />
+            android:layout_height="250dp"
+            android:layout_toEndOf="@+id/avatar"
+            android:layout_toRightOf="@+id/avatar">
 
-        <ImageView
-            android:id="@+id/timeview"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/clock"
-            android:layout_below="@+id/titleview"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="7dp"
-            tools:ignore="ContentDescription"
-            android:layout_marginStart="5dp" />
+            <TextView
+                android:id="@+id/titleview"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/titlebanner"
+                android:gravity="center"
+                android:text="@string/title"
+                android:textAlignment="center"
+                android:textColor="#FFF"
+                android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/runtimeview"
-            android:layout_width="100dp"
-            android:layout_height="20dp"
-            android:layout_below="@+id/titleview"
-            android:layout_toRightOf="@+id/timeview"
-            android:textColor="#000"
-            android:text="@string/runtime"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_toEndOf="@+id/timeview"
-            android:layout_marginStart="5dp" />
+            <ImageView
+                android:id="@+id/timeview"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_below="@+id/titleview"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="7dp"
+                android:src="@drawable/clock"
+                tools:ignore="ContentDescription" />
 
-        <ImageView
-            android:id="@+id/microphoneview"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/microphone"
-            android:layout_below="@+id/timeview"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginStart="5dp"
-            tools:ignore="ContentDescription" />
+            <TextView
+                android:id="@+id/runtimeview"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:layout_below="@+id/titleview"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@+id/timeview"
+                android:layout_toRightOf="@+id/timeview"
+                android:text="@string/runtime"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/languageview"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_below="@+id/runtimeview"
-            android:layout_toRightOf="@+id/microphoneview"
-            android:text="@string/language"
-            android:textColor="#000"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="8dp"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginStart="5dp"
-            android:layout_toEndOf="@+id/microphoneview" />
+            <ImageView
+                android:id="@+id/microphoneview"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_below="@+id/timeview"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="7dp"
+                android:src="@drawable/microphone"
+                tools:ignore="ContentDescription" />
 
-        <ImageView
-            android:id="@+id/dramaview"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/drama"
-            android:layout_below="@+id/microphoneview"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="7dp"
-            tools:ignore="ContentDescription"
-            android:layout_marginStart="5dp" />
+            <TextView
+                android:id="@+id/languageview"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@+id/runtimeview"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="8dp"
+                android:layout_toEndOf="@+id/microphoneview"
+                android:layout_toRightOf="@+id/microphoneview"
+                android:text="@string/language"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/genresview"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_below="@+id/languageview"
-            android:layout_toRightOf="@+id/dramaview"
-            android:text="@string/genres"
-            android:textColor="#000"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="8dp"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_toEndOf="@+id/dramaview"
-            android:layout_marginStart="5dp" />
+            <ImageView
+                android:id="@+id/dramaview"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_below="@+id/microphoneview"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="7dp"
+                android:src="@drawable/drama"
+                tools:ignore="ContentDescription" />
 
-        <TextView
-            android:id="@+id/yearview"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:text="@string/year"
-            android:paddingTop="45dp"
-            android:paddingLeft="14dp"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:textColor="#FFF"
-            android:background="@drawable/year"
-            android:layout_alignParentEnd="true" />
+            <TextView
+                android:id="@+id/genresview"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@+id/languageview"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="8dp"
+                android:layout_toEndOf="@+id/dramaview"
+                android:layout_toRightOf="@+id/dramaview"
+                android:text="@string/genres"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/yearview"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/year"
+                android:paddingLeft="14dp"
+                android:paddingTop="45dp"
+                android:text="@string/year"
+                android:textColor="#FFF"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
 
     </RelativeLayout>
 

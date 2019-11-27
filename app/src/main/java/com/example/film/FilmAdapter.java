@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
+
 import java.text.DecimalFormat;
 import java.util.List;
 
@@ -35,7 +36,7 @@ class FilmAdapter extends ArrayAdapter<Film> {
         Film current = mFilms.get(position);
 
 
-        if(view == null) {
+        if (view == null) {
             view = LayoutInflater.from(getContext()).inflate(R.layout.item, parent, false);
         }
 
